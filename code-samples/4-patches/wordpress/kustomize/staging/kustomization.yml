@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+labels:
+- pairs:
+    version: lec-18
+  includeTemplates: true
+
+
+namePrefix: lec-18-
+namespace: lec-18
+
+patchesStrategicMerge:
+  - patches/patch-limits.yml
+
+
+
+resources:
+- ../base
+- namespace.yml
